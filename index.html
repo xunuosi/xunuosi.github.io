@@ -166,7 +166,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>最近看了一些资料成功搭建了自己的基于GitHub的博客，网上有很多教程，但是在搭建的过程中还是遇到了一些坑，最终都解决了。话说没有坑还有什么意思-_-!这里将自己搭建的全过程分享给大家,希望能帮助到大家。</p>
-<h3 id="一、GitHub端"><a href="#一、GitHub端" class="headerlink" title="一、GitHub端"></a>一、GitHub端</h3><p>首先注册个GitHub的帐号，这里不多说了，注意注册完帐号以后需要添加一个SSH公钥认证。详细的过程可以看下这里 <a href="http://www.cnblogs.com/liulangmao/p/4323064.html" target="_blank" rel="external">创建GitHub帐号</a>。这里要强调一下在创建SSH的时候一定要创建一个公有的密钥，否则后续hexo将不能把静态页面上传到GItHub仓中。</p>
+<h3 id="一、GitHub端"><a href="#一、GitHub端" class="headerlink" title="一、GitHub端"></a>一、GitHub端</h3><p>首先注册个GitHub的帐号，这里不多说了，注意注册完帐号以后需要添加一个SSH公钥认证。详细的过程可以看下这里 <a href="http://www.cnblogs.com/liulangmao/p/4323064.html">创建GitHub帐号</a>。这里要强调一下在创建SSH的时候一定要创建一个公有的密钥，否则后续hexo将不能把静态页面上传到GItHub仓中。</p>
 <p>好注册完成后新建一个项目过程如下：</p>
 <ol>
 <li><p>点击New repository<br><img src="https://github.com/xunuosi/img/blob/master/create_github_blog/1.png?raw=true" alt="新建工程"></p>
@@ -182,60 +182,10 @@
 <ol>
 <li>进入页面后在下半部分找到如图所示的位置点击<code>Launch automatic page generator</code>按钮。</li>
 </ol>
-<p><img src="https://github.com/xunuosi/img/blob/master/create_github_blog/4.png?raw=true" alt="Settings2"></p>
-<ol>
-<li>接下来就是一些简单配置页面信息，按图操作就可以了，很简单。</li>
-</ol>
-<p><img src="https://github.com/xunuosi/img/blob/master/create_github_blog/5.png?raw=true" alt="配置页面"></p>
-<p><img src="https://github.com/xunuosi/img/blob/master/create_github_blog/6.png?raw=true" alt="配置页面"></p>
-<p>6.以上都配置完成后，GitHub端的配置就结束了，此时你输入[yourGitHubName].github.io就应该看到如下的界面，如果看到了恭喜你，第一阶段的配置您已经完成了～</p>
-<p><img src="https://raw.githubusercontent.com/xunuosi/img/3b42ee835fbe781ede1c517e2c9643c09b850842/create_github_blog/7.png" alt="配置页面"></p>
-<h3 id="二、安装Node-js和初始化hexo"><a href="#二、安装Node-js和初始化hexo" class="headerlink" title="二、安装Node.js和初始化hexo"></a>二、安装Node.js和初始化hexo</h3><ul>
-<li>下载安装Node.js</li>
-</ul>
-<p><a href="https://nodejs.org/en/" target="_blank" rel="external">下载地址</a></p>
-<ul>
-<li><p>安装Hexo<br>安装好Node.js以后使用它的命令行编译器：<br><img src="https://raw.githubusercontent.com/xunuosi/img/a658e2cf264cbc6bff707254d1f225bfbbc25c7c/create_github_blog/8.png" alt="命令行编译器"><br>然后执行以下这条安装Hexo的命令</p>
-<blockquote>
-<p>$ npm install -g hexo-cli</p>
-</blockquote>
-</li>
-<li><p>初始化<br>安装完成后，需要建立一个文件夹（如hexo），执行以下指令(在hexo路径下)，Hexo 即会自动在目标文件夹建立网站所需要的所有文件。</p>
-<blockquote>
-<p>hexo init</p>
-</blockquote>
-</li>
-<li><p>修改hexo配置的文件，在新建的hexo文件夹下找到<code>_config.yml</code>这个文件，然后使用如notepad++之类的文本编辑器打开。该文件夹需要修改的位置如下所示：</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line"># Hexo Configuration</div><div class="line">## Docs: http://hexo.io/docs/configuration.html</div><div class="line">## Source: https://github.com/hexojs/hexo/</div><div class="line"></div><div class="line"># Site</div><div class="line">title: code_bunny&apos;s blog                      #设置header里的title</div><div class="line">subtitle: never giveup reading!               #副标题</div><div class="line">description: never giveup reading!            #描述</div><div class="line">author: code_bunny                            #作者名,会显示在左下角</div><div class="line">language: zh-CN                               #设置中文</div><div class="line">timezone:</div><div class="line"></div><div class="line"># URL</div><div class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</div><div class="line">url: http://yoursite.com</div><div class="line">root: /</div><div class="line">permalink: :year/:month/:day/:title/</div><div class="line">permalink_defaults:</div><div class="line"></div><div class="line"># Directory</div><div class="line">source_dir: source</div><div class="line">public_dir: public</div><div class="line">tag_dir: tags</div><div class="line">archive_dir: archives</div><div class="line">category_dir: categories</div><div class="line">code_dir: downloads/code</div><div class="line">i18n_dir: :lang</div><div class="line">skip_render:</div><div class="line"></div><div class="line"># Writing</div><div class="line">new_post_name: :title.md # File name of new posts</div><div class="line">default_layout: post</div><div class="line">titlecase: false # Transform title into titlecase</div><div class="line">external_link: true # Open external links in new tab</div><div class="line">filename_case: 0</div><div class="line">render_drafts: false</div><div class="line">post_asset_folder: false</div><div class="line">relative_link: false</div><div class="line">future: true</div><div class="line">highlight:</div><div class="line">  enable: true</div><div class="line">  line_number: true</div><div class="line">  tab_replace:</div><div class="line"></div><div class="line"># Category &amp; Tag</div><div class="line">default_category: uncategorized</div><div class="line">category_map:</div><div class="line">tag_map:</div><div class="line"></div><div class="line"># Date / Time format</div><div class="line">## Hexo uses Moment.js to parse and display date</div><div class="line">## You can customize the date format as defined in</div><div class="line">## http://momentjs.com/docs/#/displaying/format/</div><div class="line">date_format: YYYY-MM-DD</div><div class="line">time_format: HH:mm:ss</div><div class="line"></div><div class="line"># Pagination</div><div class="line">## Set per_page to 0 to disable pagination</div><div class="line">per_page: 5                               #设置每页显示多少篇文章</div><div class="line">pagination_dir: page</div><div class="line"></div><div class="line"># Extensions</div><div class="line">## Plugins: http://hexo.io/plugins/</div><div class="line">## Themes: http://hexo.io/themes/</div><div class="line">theme: landscape                 #设置要使用的模板,暂时不要改,以后会说到怎么换模板</div><div class="line"></div><div class="line"># Deployment</div><div class="line">## Docs: http://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: git@github.com:xunuosi/xunuosi.github.io // 修改成使用项目的SSH地址</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
-<p>这里强调一下配置文件编写的时候一定是键值对的形式，”:”冒号后有一个空格，切记、切记、切记！这里提供一个<a href="http://www.yamllint.com/" target="_blank" rel="external">网站</a>用于检测你输入的语法是否正确。</p>
-<ul>
-<li>预览配置效果<br>两个命令即可完成静态页面的生成和预览<code>$ hexo generate</code>和<code>$ hexo server</code>，以下是命令的简写形式：<blockquote>
-<p>hexo g<br>hexo s</p>
-</blockquote>
-</li>
-</ul>
-<p>输入命令以后在浏览器器中输入 <code>localhost:4000</code> 就可以看见预览的静态网页了，此时在命令行编译器中使用 <code>Ctrl+C</code> 就可以退出预览。<br>最后将编译好的网页代码部署到GitHub中就大功告成了。命令为 <code>$ hexo deploy</code></p>
-<blockquote>
-<p>hexo d</p>
-</blockquote>
-<p>此时可能会提醒你Git命令不能识别之类的错误，这就是我说的安装配置时的最后一个坑，此时你需要在命令行中输入以下语句来完成Install <a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="external">hexo-deployer-git</a>.</p>
-<blockquote>
-<p>$ npm install hexo-deployer-git –save </p>
-</blockquote>
-<p>好执行完成以后，你再使用<code>$ hexo deploy</code>就可以部署到你的GitHub仓中了，小伙伴们部署完以后赶紧查看一下自己的域名，网页已经变化了啊～</p>
-<h3 id="三、编写文章"><a href="#三、编写文章" class="headerlink" title="三、编写文章"></a>三、编写文章</h3><p>博客是基于MarkDown语法的，不了解MarkDown的请自行百度吧。</p>
-<ul>
-<li>创建文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new &quot;First Blog&quot;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>或者直接进入hexo\source_posts路径下添加 xxx.md 类型的文件，然后打开文件编辑:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">title: &quot;my new post&quot;             #可以随意修改,可以是中文</div><div class="line">date: 2015-03-10 17:54:06        #创建的时间,一般不改</div><div class="line">categories: blog                 #文章文类</div><div class="line">tags: [标签1,便签2]                 #文章tag标签,多个标签用逗号隔开</div><div class="line">---</div><div class="line">#这里开始使用markdown语法书写文章的内容</div></pre></td></tr></table></figure>
-<p>编辑完成之后再使用<code>hexo g</code>、<code>hexo s</code>、<code>hexo d</code> 这三个命令完成文章的提交。</p>
-<hr>
-<p>以上就是关于搭建Blog的初始化步骤，后面还涉及修改主题、添加评论功能等等，总之小伙伴们自行研究吧，希望小伙伴们都能在未知的领域找到快乐啊。</p>
-
+<p><img src="https://github.com/xunuosi/img/blob/master/create_github_blog/4.png?raw=true" alt="Settings2"><br>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/11/26/GitHub搭建Blog-1/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
